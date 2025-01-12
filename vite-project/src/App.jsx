@@ -6,6 +6,17 @@ const App = () => {
   const {data} = UseFetch('https://dummyjson.com/products?limit=100')
   const bottomRef = useRef(null)
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+  }
+
+  const handleScrollToBottom = () => {
+    bottomRef.current.scrollIntoView({behavior: 'smooth'})
+  }
 
   return (
     <div className='flex flex-col gap-2 items-center'>
